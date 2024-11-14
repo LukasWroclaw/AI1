@@ -7,7 +7,6 @@ Created on Mon Sep 23 22:10:09 2024
 """
 
 import spacy
-import unittest
 import nltk
 from nltk.sentiment import SentimentIntensityAnalyzer
 

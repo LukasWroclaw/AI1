@@ -6,7 +6,8 @@ Created on Tue Sep 24 22:10:56 2024
 @author: ola
 """
 
-import header as h
+import headerCommon as hc
+import headerAI as hai
 
 
 
@@ -19,14 +20,14 @@ class SimilarityAnaliser:
 
 
   def checkSimilarity(self, sentence1, sentence2):
-    sentence1Embedding = h.model.encode(sentence1, convert_to_tensor=True)
-    sentence2Embedding = h.model.encode(sentence2, convert_to_tensor=True)
-    result = h.util.pytorch_cos_sim(sentence1Embedding, sentence2Embedding)
+    sentence1Embedding = hai.model.encode(sentence1, convert_to_tensor=True)
+    sentence2Embedding = hai.model.encode(sentence2, convert_to_tensor=True)
+    result = hai.util.pytorch_cos_sim(sentence1Embedding, sentence2Embedding)
 
     return result
 
 
-class TestSimilarityAnaliser(h.unittest.TestCase):
+class TestSimilarityAnaliser(hc.unittest.TestCase):
 
     def test_similarityCheck1(self):
 
@@ -51,4 +52,4 @@ class TestSimilarityAnaliser(h.unittest.TestCase):
 
 
 if testIt:
-    h.unittest.main(argv=[''], verbosity=2, exit=False)
+    hc.unittest.main(argv=[''], verbosity=2, exit=False)

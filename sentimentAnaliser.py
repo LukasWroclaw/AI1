@@ -6,7 +6,8 @@ Created on Tue Sep 24 22:10:56 2024
 @author: ola
 """
 
-import header as h
+import headerCommon as hc
+import headerAI as hai
 
 
 
@@ -17,14 +18,14 @@ testIt = 1
 class SentimentAnaliser:
 
   def __init__(self):
-    self.sia = h.SentimentIntensityAnalyzer()
+    self.sia = hai.SentimentIntensityAnalyzer()
 
   def provideSentimentForSentence(self, sentence):
     return self.sia.polarity_scores(sentence)
 
 
 
-class TestSentimentAnaliser(h.unittest.TestCase):
+class TestSentimentAnaliser(hc.unittest.TestCase):
 
     def test_sentimentCheck1(self):
         sentence1 = "Internet service is supported"
@@ -46,4 +47,4 @@ class TestSentimentAnaliser(h.unittest.TestCase):
 
 
 if testIt:
-    h.unittest.main(argv=[''], verbosity=2, exit=False)
+    hc.unittest.main(argv=[''], verbosity=2, exit=False)

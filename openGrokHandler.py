@@ -9,7 +9,7 @@ Created on Tue Sep 24 22:10:56 2024
 
 
 
-import header as h
+import headerCommon as hc
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
@@ -91,7 +91,7 @@ class WebSearchClass:
 
 
 
-class TestWebSearchClass(h.unittest.TestCase):
+class TestWebSearchClass(hc.unittest.TestCase):
 
     def test_scenario1(self):
         
@@ -116,6 +116,6 @@ class TestWebSearchClass(h.unittest.TestCase):
 
 
 if testIt:
-    h.unittest.main(argv=[''], verbosity=2, exit=False)
+    hc.unittest.main(argv=[''], verbosity=2, exit=False)
 
 
